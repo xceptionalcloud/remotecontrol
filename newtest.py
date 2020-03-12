@@ -70,7 +70,7 @@ for xml in keynav[key]:
     key_press[key] = xml
     print("This key press - " + str(key_press))
     r = requests.post(url,headers=headers,data=key_press,auth=(phoneUser,phonePass))
-    #time.sleep(1.0)
+    time.sleep(0.5)
     print("Response code from phone - " + str(r))
     print("Response content from phone - " + str(r.content))
 
