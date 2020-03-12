@@ -25,12 +25,13 @@ print("Starting PhoneRemote test")
 #_88xx_keynavlist = ['Dial:923215000']
 #_88xx_keynavlist = ['Key:KeyPad1', 'Key:KeyPad2', 'Key:KeyPad0', 'Key:KeyPad3', 'Key:KeyPadPound']
 #_88xx_keynavlist = ['Key:KeyPad9', 'Key:KeyPad3', 'Key:KeyPad4', 'Key:KeyPad1', 'Key:KeyPadPound']
-_88xx_keynavlist = ['Key:Soft2']
+#_88xx_keynavlist = ['Key:Soft2']
 #_88xx_keynavlist = ['Key:Applications','Key:KeyPad6']
 #_88xx_keynavlist = ['Key:Applications','Key:KeyPad6','Key:KeyPad4','Key:KeyPad1','Key:Soft3']
 #_88xx_keynavlist = ['Key:Applications','Key:KeyPadStar','Key:KeyPadStar','Key:KeyPadPound','Key:KeyPadStar','Key:KeyPadStar']
 #_88xx_keynavlist = ['Key:Applications','Key:KeyPad5','Key:KeyPad4','Key:KeyPad4','Key:Soft3']
 #_88xx_keynavlist = ['Key:Applications'] #,'Key:KeyPad6','Key:KeyPad4','Key:KeyPad1','Key:Soft3']
+_88xx_keynavlist = ['Key:KeyPad1']
 
 alphaCCap = ['Key:KeyPad2', 'Key:KeyPad2', 'Key:KeyPad2', 'Key:KeyPad2', 'Key:KeyPad2', 'Key:KeyPad2', 'Key:KeyPad2']
 alphaI = ['Key:KeyPad4', 'Key:KeyPad4', 'Key:KeyPad4']
@@ -40,7 +41,8 @@ alphaO = ['Key:KeyPad6', 'Key:KeyPad6', 'Key:KeyPad6']
 
 key = 'XML'
 keynav = {key : []}
-url = 'http://10.255.20.93/CGI/Execute'
+#url = 'http://10.255.20.93/CGI/Execute'
+url = 'http://10.255.12.51/CGI/Execute'
 headers={'content-type':'application/xml'}
 
 for keypress in _88xx_keynavlist:
