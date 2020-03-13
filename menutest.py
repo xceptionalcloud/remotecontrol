@@ -32,7 +32,7 @@ print("Starting PhoneRemote test")
 #_88xx_keynavlist = ['Key:Applications','Key:KeyPadStar','Key:KeyPadStar','Key:KeyPadPound','Key:KeyPadStar','Key:KeyPadStar']
 #_88xx_keynavlist = ['Key:Applications','Key:KeyPad5','Key:KeyPad4','Key:KeyPad4','Key:Soft3']
 #_88xx_keynavlist = ['Key:Applications'] #,'Key:KeyPad6','Key:KeyPad4','Key:KeyPad1','Key:Soft3']
-_88xx_keynavlist = ['This is a menu']
+_88xx_keynavlist = ['**** RESTRICTED ACCESS ****']
 
 alphaCCap = ['Key:KeyPad2', 'Key:KeyPad2', 'Key:KeyPad2', 'Key:KeyPad2', 'Key:KeyPad2', 'Key:KeyPad2', 'Key:KeyPad2']
 alphaI = ['Key:KeyPad4', 'Key:KeyPad4', 'Key:KeyPad4']
@@ -49,9 +49,24 @@ headers={'content-type':'application/xml'}
 for keypress in _88xx_keynavlist:
     ph_nav = etree.Element('CiscoIPPhoneMenu')
     exeit_e = etree.SubElement(ph_nav, 'Title')
-    #exeit_e.set('Priority','0')
-    #exeit_e.set('URL',keypress)
     exeit_e.text = keypress
+    prompt = etree.SubElement(ph_nav, 'Prompt')
+    prompt.text = "Gixxer Bros Control Panel"
+    ph_nav2 = etree.SubElement(ph_nav, 'MenuItem')
+    menu1 = etree.SubElement(ph_nav2, 'Name')
+    menu1.text = 'Eliminate world with virus?'
+    #menuUrl = etree.SubElement(ph_nav2, 'URL')
+    #menuUrl.text = 'Yes'
+    ph_nav3 = etree.SubElement(ph_nav, 'MenuItem')
+    menu2 = etree.SubElement(ph_nav3, 'Name')
+    menu2.text = 'Summon a female'
+    #menu2Url = etree.SubElement(ph_nav3, 'URL')
+    #menu2Url.text = 'http://www.google.com'
+    ph_nav4 = etree.SubElement(ph_nav, 'MenuItem')
+    menu3 = etree.SubElement(ph_nav4, 'Name')
+    menu3.text = 'Summon all females - EXPERIMENTAL!'
+    #menu3Url = etree.SubElement(ph_nav4, 'URL')
+    #menu3Url.text = 'http://www.bing.com'
     phnavstr = etree.tostring(ph_nav,pretty_print=True)
     keynav[key] = keynav[key]+[phnavstr]
 '''
