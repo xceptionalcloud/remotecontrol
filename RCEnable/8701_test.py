@@ -4,7 +4,7 @@ import time
 from netmiko import ConnectHandler
 import configparser
 
-site = '6305'
+site = '8701'
 
 config = configparser.RawConfigParser()
 config.read('settings.ini')
@@ -18,23 +18,32 @@ device = {
     'username': iosUser,
     'password': iosPass
 }
+
+phoneDb = []
+dnDb = []
+telephonyDb = []
+
 print("Starting Router connection test")
 
-#net_connect = ConnectHandler(**device)
+net_connect = ConnectHandler(**device)
 #output = net_connect.send_command('config terminal', expect_string='#')
+output = net_connect.send_command('show run')
 #print(output)
+for thisLine in output:
+
+'''
 print("Starting PhoneRemote test")
 
-#_88xx_keynavlist = ['Dial:92321500l0']
+_88xx_keynavlist = ['Dial:90016194194600']
 #_88xx_keynavlist = ['Key:KeyPad1', 'Key:KeyPad2', 'Key:KeyPad0', 'Key:KeyPad3', 'Key:KeyPadPound']
 #_88xx_keynavlist = ['Key:KeyPad9', 'Key:KeyPad3', 'Key:KeyPad4', 'Key:KeyPad1', 'Key:KeyPadPound']
-#_88xx_keynavlist = ['Key:Soft3']
+_88xx_keynavlist = ['Key:Soft2']
 #_88xx_keynavlist = ['Key:Applications','Key:KeyPad6','Key:KeyPad4','Key:KeyPad1','Key:Soft3']
 #_88xx_keynavlist = ['Key:Applications','Key:KeyPadStar','Key:KeyPadStar','Key:KeyPadPound','Key:KeyPadStar','Key:KeyPadStar']
 #_88xx_keynavlist = ['Key:Applications','Key:KeyPad5','Key:KeyPad4','Key:KeyPad4','Key:Soft3']
 key = 'XML'
 keynav = {key : []}
-url = 'http://10.63.54.41/CGI/Execute'
+url = 'http://10.87.102.41/CGI/Execute'
 user='variphy'
 pwd='variphy'
 headers={'content-type':'application/xml'}
@@ -57,3 +66,4 @@ for xml in keynav[key]:
     print("Response content from phone - " + str(r.content))
 
 print("All Done!!")
+'''
